@@ -1,0 +1,26 @@
+[Fri Feb 16 00:29:22.718003 2024] [mpm_winnt:notice] [pid 3732:tid 424] AH00455: Apache/2.4.58 (Win64) PHP/8.3.3 configured -- resuming normal operations
+[Fri Feb 16 00:29:22.718003 2024] [mpm_winnt:notice] [pid 3732:tid 424] AH00456: Apache Lounge VS17 Server built: Jan 30 2024 19:01:23
+[Fri Feb 16 00:29:22.718003 2024] [core:notice] [pid 3732:tid 424] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Feb 16 00:29:22.723000 2024] [mpm_winnt:notice] [pid 3732:tid 424] AH00418: Parent: Created child process 4636
+Apache server shutdown initiated...
+pm_winnt:notice] [pid 4636:tid 428] AH00354: Child: Starting 64 worker threads.
+[Fri Feb 16 00:35:00.505783 2024] [mpm_winnt:notice] [pid 3732:tid 424] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Feb 16 00:35:02.527619 2024] [mpm_winnt:notice] [pid 4636:tid 428] AH00364: Child: All worker threads have exited.
+[Fri Feb 16 00:35:02.558870 2024] [mpm_winnt:notice] [pid 3732:tid 424] AH00430: Parent: Child process 4636 exited successfully.
+[Fri Feb 16 12:39:46.374721 2024] [mpm_winnt:notice] [pid 628:tid 424] AH00455: Apache/2.4.58 (Win64) PHP/8.3.3 configured -- resuming normal operations
+[Fri Feb 16 12:39:46.390348 2024] [mpm_winnt:notice] [pid 628:tid 424] AH00456: Apache Lounge VS17 Server built: Jan 30 2024 19:01:23
+[Fri Feb 16 12:39:46.390348 2024] [core:notice] [pid 628:tid 424] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Feb 16 12:39:46.390348 2024] [mpm_winnt:notice] [pid 628:tid 424] AH00418: Parent: Created child process 6728
+[Fri Feb 16 12:39:47.093457 2024] [mpm_winnt:notice] [pid 6728:tid 428] AH00354: Child: Starting 64 worker threads.
+[Fri Feb 16 13:53:44.139663 2024] [php:warn] [pid 6728:tid 1096] [client ::1:50455] PHP Warning:  foreach() argument must be of type array|object, string given in C:\\localhost\\display.php on line 6, referer: http://localhost/
+[Fri Feb 16 13:59:00.765093 2024] [php:error] [pid 6728:tid 1084] [client ::1:50480] PHP Fatal error:  Uncaught TypeError: sizeof(): Argument #1 ($value) must be of type Countable|array, string given in C:\\localhost\\display.php:5\nStack trace:\n#0 {main}\n  thrown in C:\\localhost\\display.php on line 5, referer: http://localhost/
+[Fri Feb 16 14:17:54.299097 2024] [php:warn] [pid 6728:tid 1084] [client ::1:50896] PHP Warning:  A non-numeric value encountered in C:\\localhost\\display.php on line 10, referer: http://localhost/
+[Fri Feb 16 14:20:53.252701 2024] [php:warn] [pid 6728:tid 1084] [client ::1:50983] PHP Warning:  A non-numeric value encountered in C:\\localhost\\display.php on line 10, referer: http://localhost/
+[Fri Feb 16 14:35:08.514948 2024] [php:error] [pid 6728:tid 1096] [client ::1:51380] PHP Fatal error:  Uncaught Error: Call to undefined function style() in C:\\localhost\\display.php:9\nStack trace:\n#0 {main}\n  thrown in C:\\localhost\\display.php on line 9, referer: http://localhost/
+[Fri Feb 16 14:36:08.792937 2024] [php:error] [pid 6728:tid 1096] [client ::1:51388] PHP Parse error:  syntax error, unexpected double-quote mark, expecting "," or ";" in C:\\localhost\\display.php on line 9, referer: http://localhost/
+[Fri Feb 16 14:40:01.726356 2024] [php:warn] [pid 6728:tid 1096] [client ::1:51548] PHP Warning:  Uninitialized string offset 6 in C:\\localhost\\display.php on line 15, referer: http://localhost/
+[Fri Feb 16 14:40:01.726356 2024] [php:warn] [pid 6728:tid 1096] [client ::1:51548] PHP Warning:  Uninitialized string offset 7 in C:\\localhost\\display.php on line 15, referer: http://localhost/
+[Fri Feb 16 14:40:01.726356 2024] [php:warn] [pid 6728:tid 1096] [client ::1:51548] PHP Warning:  Uninitialized string offset 8 in C:\\localhost\\display.php on line 15, referer: http://localhost/
+[Fri Feb 16 14:42:51.305235 2024] [php:error] [pid 6728:tid 1096] [client ::1:51629] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\\localhost\\display.php on line 14, referer: http://localhost/
+[Fri Feb 16 14:55:38.572510 2024] [php:error] [pid 6728:tid 1096] [client ::1:52001] PHP Parse error:  syntax error, unexpected variable "$fontSize", expecting "," or ";" in C:\\localhost\\display.php on line 10, referer: http://localhost/
+[Fri Feb 16 15:02:50.150517 2024] [php:error] [pid 6728:tid 1084] [client ::1:52245] PHP Parse error:  syntax error, unexpected variable "$redNum", expecting "," or ";" in C:\\localhost\\display.php on line 20, referer: http://localhost/
