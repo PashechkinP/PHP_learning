@@ -11,7 +11,8 @@ pm_winnt:notice] [pid 4636:tid 428] AH00354: Child: Starting 64 worker threads.
 [Fri Feb 16 12:39:46.390348 2024] [mpm_winnt:notice] [pid 628:tid 424] AH00456: Apache Lounge VS17 Server built: Jan 30 2024 19:01:23
 [Fri Feb 16 12:39:46.390348 2024] [core:notice] [pid 628:tid 424] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
 [Fri Feb 16 12:39:46.390348 2024] [mpm_winnt:notice] [pid 628:tid 424] AH00418: Parent: Created child process 6728
-[Fri Feb 16 12:39:47.093457 2024] [mpm_winnt:notice] [pid 6728:tid 428] AH00354: Child: Starting 64 worker threads.
+Apache server shutdown initiated...
+pm_winnt:notice] [pid 6728:tid 428] AH00354: Child: Starting 64 worker threads.
 [Fri Feb 16 13:53:44.139663 2024] [php:warn] [pid 6728:tid 1096] [client ::1:50455] PHP Warning:  foreach() argument must be of type array|object, string given in C:\\localhost\\display.php on line 6, referer: http://localhost/
 [Fri Feb 16 13:59:00.765093 2024] [php:error] [pid 6728:tid 1084] [client ::1:50480] PHP Fatal error:  Uncaught TypeError: sizeof(): Argument #1 ($value) must be of type Countable|array, string given in C:\\localhost\\display.php:5\nStack trace:\n#0 {main}\n  thrown in C:\\localhost\\display.php on line 5, referer: http://localhost/
 [Fri Feb 16 14:17:54.299097 2024] [php:warn] [pid 6728:tid 1084] [client ::1:50896] PHP Warning:  A non-numeric value encountered in C:\\localhost\\display.php on line 10, referer: http://localhost/
@@ -24,3 +25,6 @@ pm_winnt:notice] [pid 4636:tid 428] AH00354: Child: Starting 64 worker threads.
 [Fri Feb 16 14:42:51.305235 2024] [php:error] [pid 6728:tid 1096] [client ::1:51629] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\\localhost\\display.php on line 14, referer: http://localhost/
 [Fri Feb 16 14:55:38.572510 2024] [php:error] [pid 6728:tid 1096] [client ::1:52001] PHP Parse error:  syntax error, unexpected variable "$fontSize", expecting "," or ";" in C:\\localhost\\display.php on line 10, referer: http://localhost/
 [Fri Feb 16 15:02:50.150517 2024] [php:error] [pid 6728:tid 1084] [client ::1:52245] PHP Parse error:  syntax error, unexpected variable "$redNum", expecting "," or ";" in C:\\localhost\\display.php on line 20, referer: http://localhost/
+[Fri Feb 16 15:54:22.804650 2024] [mpm_winnt:notice] [pid 628:tid 424] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Feb 16 15:54:24.836430 2024] [mpm_winnt:notice] [pid 6728:tid 428] AH00364: Child: All worker threads have exited.
+[Fri Feb 16 15:54:24.898929 2024] [mpm_winnt:notice] [pid 628:tid 424] AH00430: Parent: Child process 6728 exited successfully.

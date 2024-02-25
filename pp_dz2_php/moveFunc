@@ -1,0 +1,17 @@
+<?php
+
+if (isset($_POST['submit'])){
+
+    function putCross() {
+
+    if(isset($_POST["field"])){
+
+
+        
+    }
+
+    }
+
+}
+
+?>

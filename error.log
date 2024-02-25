@@ -1,0 +1,6 @@
+[Sun Feb 25 13:41:51.986833 2024] [mpm_winnt:notice] [pid 6412:tid 424] AH00455: Apache/2.4.58 (Win64) PHP/8.3.3 configured -- resuming normal operations
+[Sun Feb 25 13:41:51.986833 2024] [mpm_winnt:notice] [pid 6412:tid 424] AH00456: Apache Lounge VS17 Server built: Jan 30 2024 19:01:23
+[Sun Feb 25 13:41:51.986833 2024] [core:notice] [pid 6412:tid 424] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Feb 25 13:41:51.986833 2024] [mpm_winnt:notice] [pid 6412:tid 424] AH00418: Parent: Created child process 6000
+[Sun Feb 25 13:41:52.588619 2024] [mpm_winnt:notice] [pid 6000:tid 428] AH00354: Child: Starting 64 worker threads.
+[Sun Feb 25 14:01:28.875378 2024] [php:error] [pid 6000:tid 1088] [client ::1:51631] PHP Parse error:  syntax error, unexpected identifier "radio", expecting "," or ";" in C:\\localhost\\pp_dz2_php\\index.php on line 14, referer: http://localhost/
