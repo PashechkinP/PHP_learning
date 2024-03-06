@@ -15,9 +15,11 @@
         <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;display: flex;flex-wrap: wrap;align-items: center;justify-content: center;">
             <table border="2" style="border-collapse:collapse; width:17%; text-align:center">
                 <?php
-
+                session_start();
+                session_destroy();
+                session_start();
                 $krestiki = [["", "", ""], ["", "", ""], ["", "", ""]];
-
+                $_SESSION["gameField"] = $krestiki;
                 for ($i = 0; $i < 3; $i++) {
                     echo "<tr>";
                     for ($j = 0; $j < 3; $j++) {
