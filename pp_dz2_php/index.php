@@ -16,13 +16,13 @@
             <table border="2" style="border-collapse:collapse; width:17%; text-align:center">
                 <?php
 
-                $krestiki = [["X", "", ""], ["", "X", ""], ["", "", "X"]];
+                $krestiki = [["", "", ""], ["", "", ""], ["", "", ""]];
 
                 for ($i = 0; $i < 3; $i++) {
                     echo "<tr>";
                     for ($j = 0; $j < 3; $j++) {
                         if ($krestiki[$i][$j] == "") {
-                            echo '<td style="font-size:90px"><input type="radio" name="field" value="X" style="height:70px; width:70px; vertical-align: middle; margin: 15px" /></td>';
+                            echo '<td style="font-size:90px"><input type="radio" name="field" value="' . "$i-$j" . '" style="height:70px; width:70px; vertical-align: middle; margin: 15px" /></td>';
                         } else {
                             echo  '<td style="font-size:90px">' . $krestiki[$i][$j] . '</td>';
                         }
