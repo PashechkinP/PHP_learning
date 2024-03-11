@@ -1,85 +1,139 @@
 <?php
-abstract class Literature{
+abstract class Literature
+{
 
     function __construct(protected $author, protected $name, protected $pages, protected $year, protected $cover)
     {
-        $this->author=$author;
-        $this->name=$name;
-        $this->pages=$pages;
-        $this->year=$year;
-        $this->cover=$cover;
+        $this->author = $author;
+        $this->name = $name;
+        $this->pages = $pages;
+        $this->year = $year;
+        $this->cover = $cover;
     }
 
-    function ShowInfo(){
-        echo $this->author. $this->name. $this->pages. $this->year. $this->cover;
+    function ShowInfo()
+    {
+        echo $this->author . $this->name . $this->pages . $this->year . $this->cover;
     }
-
 }
 
-class TextLiterature extends Literature{
-
-
-
+class TextLiterature extends Literature
+{
 }
 
-class ImgLiterature extends Literature{
-
-
-
+class ImgLiterature extends Literature
+{
 }
 
 
 //====================================================================================================
 
-class FunFiction extends TextLiterature{
+class FunFiction extends TextLiterature
+{
 
     function __construct($author, $name, $pages, $year, $cover, protected $source)
     {
-        $this->author=$author;
-        $this->name=$name;
-        $this->pages=$pages;
-        $this->year=$year;
-        $this->cover=$cover;
-        $this->source=$source;
+        $this->author = $author;
+        $this->name = $name;
+        $this->pages = $pages;
+        $this->year = $year;
+        $this->cover = $cover;
+        $this->source = $source;
     }
 
-    function ShowInfo(){
-      return parent::ShowInfo();
-
+    function ShowInfo()
+    {
+        return parent::ShowInfo();
     }
 }
 
-class Book extends TextLiterature{
+class Book extends TextLiterature
+{
 
     function __construct($author, $name, $pages, $year, $cover)
     {
-        $this->author=$author;
-        $this->name=$name;
-        $this->pages=$pages;
-        $this->year=$year;
-        $this->cover=$cover;
+        $this->author = $author;
+        $this->name = $name;
+        $this->pages = $pages;
+        $this->year = $year;
+        $this->cover = $cover;
     }
 
-    function ShowInfo($thing){
-        return;
+    function ShowInfo()
+    {
+        return parent::ShowInfo();
     }
 }
 
-class Comics extends ImgLiterature{
+class Comics extends ImgLiterature
+{
 
     function __construct($author, $name, $pages, $year, $cover, protected $artist, protected $colour)
     {
-        $this->author=$author;
-        $this->name=$name;
-        $this->pages=$pages;
-        $this->year=$year;
-        $this->cover=$cover;
-        $this->artist=$artist;
-        $this->colour=$colour;
+        $this->author = $author;
+        $this->name = $name;
+        $this->pages = $pages;
+        $this->year = $year;
+        $this->cover = $cover;
+        $this->artist = $artist;
+        $this->colour = $colour;
     }
 
-    function ShowInfo($thing){
-        return;
+    function ShowInfo()
+    {
+        return parent::ShowInfo();
     }
 }
 ?>
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+
+    <?php
+
+    $path = getcwd();
+
+    if (is_dir($path)) {
+        if ($dh = opendir($path)) {
+            while (($folder = readdir($dh)) !== false) {
+                if ($folder == '.' || $folder == '..') continue;
+                if (is_dir($folder)) {
+                    echo "каталог: $folder <br>";
+
+                    if($dx = opendir($folder)){
+                        while (($file = readdir($dx)) !== false){
+                            if ($file == '.' || $file == '..') continue;
+                            if (!is_dir($file)){
+                                $pngExt =".png";
+                                if(str_contains($file,$pngExt)){
+                                    echo "<img style='width:200px;height:300px' src='$folder/$file' />";
+                                    echo "<br>";
+                                    
+                                }
+                                
+                                echo "файл:    $file <br>";
+                            }
+                            
+                        }
+                        closedir($dx);
+                        echo "<br>";
+                    }
+                }
+            }
+            closedir($dh);
+        }
+    }
+    ?>
+
+</body>
+
+</html>
