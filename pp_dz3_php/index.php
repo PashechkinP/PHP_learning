@@ -43,7 +43,7 @@ class FunFiction extends TextLiterature
 
     function ShowInfo()
     {
-        return parent::ShowInfo();
+        return parent::ShowInfo().$this->source;
     }
 }
 
@@ -81,7 +81,7 @@ class Comics extends ImgLiterature
 
     function ShowInfo()
     {
-        return parent::ShowInfo();
+        return parent::ShowInfo().$this->artist.$this->colour;
     }
 }
 ?>
@@ -114,6 +114,7 @@ class Comics extends ImgLiterature
                             if ($file == '.' || $file == '..') continue;
                             if (!is_dir($file)){
                                 $pngExt =".png";
+                                $metaTxt ="meta.txt";
                                 if(str_contains($file,$pngExt)){
                                     echo "<img style='width:200px;height:300px' src='$folder/$file' />";
                                     echo "<br>";
@@ -121,8 +122,19 @@ class Comics extends ImgLiterature
                                 }
                                 
                                 echo "файл:    $file <br>";
+
+
+                                if (str_contains($file, $metaTxt)) {
+                                    $metachka = file_get_contents(__DIR__ . '/'.$folder.'/meta.txt');
+                                    echo $metachka;
+                                    echo "<br>$folder";
+                                    // $metachkaExploded = explode("#",$metachka);
+                                    // foreach($metachkaExploded as $metaInf){
+                                    //     echo "$metaInf<br>";
+                                    // }
+                                }
+                                echo "<br>";
                             }
-                            
                         }
                         closedir($dx);
                         echo "<br>";
