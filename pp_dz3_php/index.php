@@ -13,7 +13,7 @@ abstract class Literature
 
     function ShowInfo()
     {
-        echo $this->author . $this->name . $this->pages . $this->year . $this->cover;
+        echo "Author: ".$this->author ."<br>"."Name: ". $this->name ."<br>"."Pages: ". $this->pages ."<br>"."Year: ". $this->year ."<br>"."Cover: ". $this->cover."<br>";
     }
 }
 
@@ -43,7 +43,7 @@ class FunFiction extends TextLiterature
 
     function ShowInfo()
     {
-        return parent::ShowInfo().$this->source;
+        return parent::ShowInfo()."Source: ".$this->source."<br>";
     }
 }
 
@@ -81,7 +81,7 @@ class Comics extends ImgLiterature
 
     function ShowInfo()
     {
-        return parent::ShowInfo().$this->artist.$this->colour;
+        return parent::ShowInfo()."Artist: ".$this->artist ."<br>"."Colour: ".$this->colour."<br>";
     }
 }
 ?>
@@ -97,7 +97,7 @@ class Comics extends ImgLiterature
 </head>
 
 <body>
-
+<div style="display: inline-flex;justify-content: space-between;">
     <?php
 
     $path = getcwd();
@@ -107,7 +107,7 @@ class Comics extends ImgLiterature
             while (($folder = readdir($dh)) !== false) {
                 if ($folder == '.' || $folder == '..') continue;
                 if (is_dir($folder)) {
-                    echo "каталог: $folder <br>";
+                    // echo "каталог: $folder <br>"; // nazvanie papki-knigi
 
                     if($dx = opendir($folder)){
                         while (($file = readdir($dx)) !== false){
@@ -116,22 +116,39 @@ class Comics extends ImgLiterature
                                 $pngExt =".png";
                                 $metaTxt ="meta.txt";
                                 if(str_contains($file,$pngExt)){
-                                    echo "<img style='width:200px;height:300px' src='$folder/$file' />";
+                                    echo "<img style='width:200px;height:300px;border:2px solid black' src='$folder/$file' />";
                                     echo "<br>";
                                     
                                 }
                                 
-                                echo "файл:    $file <br>";
+                                // echo "файл:    $file <br>";    // nazvanie vseh failov v papke
 
-
+                                //находим файл с метаинфой и читаем его
                                 if (str_contains($file, $metaTxt)) {
                                     $metachka = file_get_contents(__DIR__ . '/'.$folder.'/meta.txt');
-                                    echo $metachka;
-                                    echo "<br>$folder";
-                                    // $metachkaExploded = explode("#",$metachka);
-                                    // foreach($metachkaExploded as $metaInf){
-                                    //     echo "$metaInf<br>";
-                                    // }
+                                    
+                                    $metachkaExploded = explode("#",$metachka);
+
+                                    switch($metachkaExploded[0]){
+
+                                        case "book":
+                                            $bookObj = new Book($metachkaExploded[2],$metachkaExploded[4],$metachkaExploded[6],$metachkaExploded[8],$metachkaExploded[10]);
+                                            $bookObj->ShowInfo();
+                                            break;
+
+                                        case "comics":
+                                            $comicsObj = new Book($metachkaExploded[2],$metachkaExploded[4],$metachkaExploded[6],$metachkaExploded[8],$metachkaExploded[10],$metachkaExploded[12],$metachkaExploded[14]);
+                                            $comicsObj->ShowInfo();
+                                            break;    
+
+                                        case "fiction":
+                                            $fictionObj = new Book($metachkaExploded[2],$metachkaExploded[4],$metachkaExploded[6],$metachkaExploded[8],$metachkaExploded[10],$metachkaExploded[12]);
+                                            $fictionObj->ShowInfo();
+                                            break;
+
+                                            default: break;
+                                    }
+
                                 }
                                 echo "<br>";
                             }
@@ -145,7 +162,7 @@ class Comics extends ImgLiterature
         }
     }
     ?>
-
+</div>
 </body>
 
 </html>
