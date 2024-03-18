@@ -108,12 +108,12 @@ class Comics extends ImgLiterature
                 if ($folder == '.' || $folder == '..') continue;
                 if (is_dir($folder)) {
                     // echo "каталог: $folder <br>"; // nazvanie papki-knigi
-
+                    // echo $path;
                     if($dx = opendir($folder)){
                         while (($file = readdir($dx)) !== false){
                             if ($file == '.' || $file == '..') continue;
                             if (!is_dir($file)){
-                                $pngExt =".png";
+                                $pngExt ="cover";
                                 $metaTxt ="meta.txt";
                                 if(str_contains($file,$pngExt)){
                                     echo "<img style='width:200px;height:300px;border:2px solid black' src='$folder/$file' />";
@@ -134,16 +134,19 @@ class Comics extends ImgLiterature
                                         case "book":
                                             $bookObj = new Book($metachkaExploded[2],$metachkaExploded[4],$metachkaExploded[6],$metachkaExploded[8],$metachkaExploded[10]);
                                             $bookObj->ShowInfo();
+                                            echo "<a href='$folder/allText.html'>Read</a>";                                            
                                             break;
 
                                         case "comics":
                                             $comicsObj = new Book($metachkaExploded[2],$metachkaExploded[4],$metachkaExploded[6],$metachkaExploded[8],$metachkaExploded[10],$metachkaExploded[12],$metachkaExploded[14]);
                                             $comicsObj->ShowInfo();
+                                            // <a class="button" href="Political/Thread/thread_insert.php" target="_blank">New Discussion</a>
                                             break;    
 
                                         case "fiction":
                                             $fictionObj = new Book($metachkaExploded[2],$metachkaExploded[4],$metachkaExploded[6],$metachkaExploded[8],$metachkaExploded[10],$metachkaExploded[12]);
                                             $fictionObj->ShowInfo();
+                                            echo "<a href='$folder/allText.html'>Read</a>";                        
                                             break;
 
                                             default: break;
@@ -151,10 +154,15 @@ class Comics extends ImgLiterature
 
                                 }
                                 echo "<br>";
+                                
                             }
+                            
                         }
+                        
                         closedir($dx);
                         echo "<br>";
+
+                        
                     }
                 }
             }
