@@ -140,7 +140,7 @@ class Comics extends ImgLiterature
                                         case "comics":
                                             $comicsObj = new Book($metachkaExploded[2],$metachkaExploded[4],$metachkaExploded[6],$metachkaExploded[8],$metachkaExploded[10],$metachkaExploded[12],$metachkaExploded[14]);
                                             $comicsObj->ShowInfo();
-                                            // <a class="button" href="Political/Thread/thread_insert.php" target="_blank">New Discussion</a>
+                                            echo "<a class='button' href='$folder/allPics.php' target='_blank'>Show content</a>";
                                             break;    
 
                                         case "fiction":
